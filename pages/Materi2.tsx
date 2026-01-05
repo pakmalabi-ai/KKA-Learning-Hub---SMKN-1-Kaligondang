@@ -224,18 +224,20 @@ function MateriSection() {
         <div className="text-slate-400 text-sm">Halaman {slide + 1} dari {slides.length}</div>
       </div>
 
-      <div className="bg-slate-800 rounded-2xl border border-slate-700 p-8 min-h-[400px] shadow-2xl relative">
-        <div className="flex items-center gap-4 mb-6 border-b border-slate-700 pb-4">
-          <div className="p-3 bg-slate-900 rounded-lg">{slides[slide].icon}</div>
-          <h3 className="text-2xl font-bold text-indigo-400">{slides[slide].title}</h3>
-        </div>
-        
-        <div className="text-slate-300 leading-relaxed text-lg">
-          {slides[slide].content}
+      <div className="bg-slate-800 rounded-2xl border border-slate-700 p-8 min-h-[400px] shadow-2xl flex flex-col justify-between">
+        <div>
+          <div className="flex items-center gap-4 mb-6 border-b border-slate-700 pb-4">
+            <div className="p-3 bg-slate-900 rounded-lg">{slides[slide].icon}</div>
+            <h3 className="text-2xl font-bold text-indigo-400">{slides[slide].title}</h3>
+          </div>
+          
+          <div className="text-slate-300 leading-relaxed text-lg mb-8">
+            {slides[slide].content}
+          </div>
         </div>
 
         {/* Navigation Buttons */}
-        <div className="absolute bottom-8 right-8 flex gap-4">
+        <div className="flex justify-end gap-4 pt-4 border-t border-slate-700/50 mt-auto">
           <button 
             disabled={slide === 0}
             onClick={() => setSlide(s => s - 1)}
